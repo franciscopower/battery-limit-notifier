@@ -20,14 +20,14 @@ This repository contains several files. The required files are:
 
 ### Installation
 
-0 - Install Python and all the dependencies listed above on your computer.
-1 - Download the archive with all the files from this repository onto your computer and unzip it *or* clone this repository onto your computer.
-2 - Place the `batery_monitor` folder in a folder named `Startup_scripts` in your `C:` drive. The scipts and images should end up int `C:\Startup_scripts\battery_monitor`.
-3 - Right click on the python file and select *Open with > Choose another app*. When a pop-up windows appears, select "Python" and check the box "Always use this app to open .py files", before clicking OK.
-4 - Right click on the `battery_limiter_launcher.vbs` file and create a shortcut.
-5 - Press the `Windows` + `r` keys on your keyboard and a windows should appear. Write `shell:startup` in the text field and click `OK`. This will open up a folder in your windows explorer.
-6 - Move the shortcut created in step 4 to the folder opened in step 5.
-7 - Restart your computer and the program should start automatically.
+0. Install Python and all the dependencies listed above on your computer.
+1. Download the archive with all the files from this repository onto your computer and unzip it *or* clone this repository onto your computer.
+2. Place the `batery_monitor` folder in a folder named `Startup_scripts` in your `C:` drive. The scipts and images should end up int `C:\Startup_scripts\battery_monitor`.
+3. Right click on the python file and select *Open with > Choose another app*. When a pop-up windows appears, select "Python" and check the box "Always use this app to open .py files", before clicking OK.
+4. Right click on the `battery_limiter_launcher.vbs` file and create a shortcut.
+5. Press the `Windows` + `r` keys on your keyboard and a windows should appear. Write `shell:startup` in the text field and click `OK`. This will open up a folder in your windows explorer.
+6. Move the shortcut created in step 4 to the folder opened in step 5.
+7. Restart your computer and the program should start automatically.
 
 ## Settings
 
