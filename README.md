@@ -2,23 +2,37 @@
 
 Displays a notification when battery level is above 90% while the computer is charging or below 20% while the commputer is discharging, in order to alert the user to unplug or plug the computer extending the computer's battery life.
 
+
 ## Windows installation
+ TODO
 
-### Project description
+## Settings
 
-This repository contains several files. The required files are:
-- Two .png images;
-- battery_limiter_win.py;
-- battery_limiter_launcher.vbs.
+Time between notifications, maximum and minimum battery limits can be adjusted, by adjusting the values in the `config.yaml` file:
+```yaml
+Battery_min_limit: 20 # percent
+Battery_max_limit: 90 # percent
+Notification_interval: 1 # minutes
+```
+
+## Build from source
+
+This project can be compiled to an executable using a tool such as `pyinstaller` or can be run as a script. 
 
 ### Dependencies
-- Python 3.9
-- Python packages:
-  - psutil
-  - schedule
-  - win10toast
+(see requirements.txt)
+```
+psutil==5.8.0
+pypiwin32==223
+pywin32==303
+PyYAML==6.0
+schedule==1.1.0
+win10toast==0.9
+```
 
-### Installation
+### Option 1: Compile into an executable
+
+### Option 2: Run program as a script
 
 0. Install Python and all the dependencies listed above on your computer.
 1. Download the archive with all the files from this repository onto your computer and unzip it *or* clone this repository onto your computer.
@@ -29,21 +43,8 @@ This repository contains several files. The required files are:
 6. Move the shortcut created in step 4 to the folder opened in step 5.
 7. Restart your computer and the program should start automatically.
 
-## Settings
-
-Maximum and minimum battery limits can be adjusted, by adjusting the values of the following variables in the python script script:
-```python
-BATTERY_MAX_LIMIT=90
-BATTERY_MIN_LIMIT=20
-```
-
-## Possible errors
-
-**Some trouble with the icon** - replace the relative icon path with the full path.
-**Cannot open "charge_now", "charge_full" or "status" files** (Linux) - check `battery_path` variable, check names of files on the linux machine.
 
 ## TODO:
+- Explain build from source
 - Make relative path for icons work;
 - Change duration of notifications;
-- Use `psutil` library on Linux version;
-- Explain Linux installation
