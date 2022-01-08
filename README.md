@@ -6,7 +6,7 @@ Displays a notification when battery level is above 90% while the computer is ch
 ## Windows installation
 
 1. Download the `Battery-Limit-Notifier.exe` and `config.yaml` files;
-2. Create a folder in the `C:\` directory named `Startup_scripts`;
+2. Create a folder in the `C:\` directory named `Startup_scripts`, and inside that folder create one called `battery_monitor`;
 3. Move the `Battery-Limit-Notifier.exe` and `config.yaml` files to the created folder;
 4. Right-click the `Battery-Limit-Notifier.exe` file and select "Create shortcut";
 5. Press the `Windows + r` keys to open up a "Run" prompt. In the text field type "shell:startup" and click "OK". This will open the startup applications folder.
