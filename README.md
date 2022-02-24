@@ -2,14 +2,17 @@
 
 Displays a notification when battery level is above 90% while the computer is charging or below 20% while the commputer is discharging, in order to alert the user to unplug or plug the computer extending the computer's battery life.
 
+## Windows Installation
 
-## Windows installation
+Just download the `BatteryLimitNotifierSetup.exe` file and run it on your computer. This will automatically perform all the steps discribed in the "Windows manual installation" section.
 
-1. Download the `Battery-Limit-Notifier.exe` and `config.yaml` files;
-2. Create a folder in the `C:\` directory named `Startup_scripts`, and inside that folder create one called `battery_monitor`;
-3. Move the `Battery-Limit-Notifier.exe` and `config.yaml` files to the created folder;
-4. Right-click the `Battery-Limit-Notifier.exe` file and select "Create shortcut";
-5. Press the `Windows + r` keys to open up a "Run" prompt. In the text field type "shell:startup" and click "OK". This will open the startup applications folder.
+## Windows manual installation
+
+1. Download the `Battery Limit Notifier.exe` and `config.yaml` files;
+2. Create a folder in the `C:\Program Files` directory named `BatteryLimitNotifier`;
+3. Move the `Battery Limit Notifier.exe` and `config.yaml` files to the created folder;
+4. Right-click the `Battery Limit Notifier.exe` file and select "Create shortcut";
+5. Press the `Windows + r` keys to open up a "Run" prompt. In the text field type "shell:common startup" and click "OK". This will open the startup applications folder.
 6. Move the shortcut created in step 5 to the folder opend in step 6.
 
 Once the computer restarts, the program will automatically start. 
@@ -21,7 +24,7 @@ Time between notifications, maximum and minimum battery limits can be adjusted, 
 ```yaml
 Battery_min_limit: 20 # percent
 Battery_max_limit: 90 # percent
-Notification_interval: 1 # minutes
+Notification_interval: 5 # minutes
 ```
 
 ## Build from source
