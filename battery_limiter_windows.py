@@ -37,9 +37,23 @@ def check_battery(bat_min_limit, bat_max_limit):
 
 def main():
     #get settings
-    with open('C:\\Startup_scripts\\battery_monitor\\config.yaml') as config_file:
-        config = yaml.load(config_file, Loader=yaml.FullLoader)
+    try:
+        with open('C:\\Startup_scripts\\battery_monitor\\config.yaml') as config_file:
+        # with open('C:\\Program Files\\BatteryLimitNotifier\\config.yaml') as config_file: #TODO substitute in installation method
+        # with open('C:\\dev\\PYTHON\\battery-limit-notifier\\config.yaml') as config_file: #!For testing
+            config = yaml.load(config_file, Loader=yaml.FullLoader)
+    except FileNotFoundError:
+        config = {
+            "Notification_interval": 5,
+            "Battery_min_limit": 20,
+            "Battery_max_limit": 90,
+        }
+        with open('C:\\Startup_scripts\\battery_monitor\\config.yaml', 'w') as config_file:
+        # with open('C:\\Program Files\\BatteryLimitNotifier\\config.yaml', 'w') as config_file: #TODO substitute in installation method
+        # with open('C:\\dev\\PYTHON\\battery-limit-notifier\\config.yaml', 'w') as config_file: #!For testing
+            yaml.dump(config, config_file, allow_unicode=True)
 
+        
     # # Check every 5 minutes
     schedule.every(config['Notification_interval']).minutes.do(check_battery, config['Battery_min_limit'], config['Battery_max_limit'])
     while True:
