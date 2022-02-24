@@ -1,3 +1,3 @@
-Battery_min_limit: 80 # percent
+Battery_min_limit: 20 # percent
 Battery_max_limit: 90 # percent
-Notification_interval: 1 # minutes
+Notification_interval: 5 # minutes
