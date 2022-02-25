@@ -44,7 +44,33 @@ win10toast==0.9
 
 ### Option 1: Compile into an executable
 
-TO DO
+0. Clone repository:
+   ```bash
+   git clone https://github.com/franciscopower/battery-limit-notifier.git
+   ```
+1. Create virtual environment:
+    ```bash
+    cd battery-limit-notifier
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+    (assuming Windows PowerShell is being used)
+2. Install necessary dependencies:
+   ```bash
+   pip install psutil PyYAML schedule win10toast pyinstaller
+   ```
+3. Run pyinstaller:
+   ```bash
+   pyinstaller --noconfirm --onefile --windowed --icon "<BASE_DIRECTORY>/battery-limit-notifier/res/Elegantthemes-Beautiful-Flat-One-Color-Battery-full.ico" --name "Battery Limit Notifier" --add-data "<BASE_DIRECTORY>/battery-limit-notifier/res;res/"  "<BASE_DIRECTORY>/battery-limit-notifier/battery_limit_notifier.py"
+   ```
+   (substitute `<BASE_DIRECTORY>` for the base directory of the github repository).
+   After running pyinstaller, an `output` folder will be created with the executable file in it. 
+4. Place the created executable file in a folder together with the `config.yaml` file.
+5. Right click on the `Battery Limit Notifier.exe` file and create a shortcut.
+6. Press the `Windows` + `r` keys on your keyboard and a windows should appear. Write `shell:common startup` in the text field and click `OK`. This will open up a folder in your windows explorer.
+7. Move the shortcut created in step 5 to the folder opened in step 5.
+8. Restart your computer and the program should start automatically.
+
 
 ### Option 2: Run program as a script
 
@@ -56,9 +82,3 @@ TO DO
 5. Press the `Windows` + `r` keys on your keyboard and a windows should appear. Write `shell:startup` in the text field and click `OK`. This will open up a folder in your windows explorer.
 6. Move the shortcut created in step 4 to the folder opened in step 5.
 7. Restart your computer and the program should start automatically.
-
-
-## TODO:
-- Explain build from source
-- Make relative path for icons work;
-- Change duration of notifications;
