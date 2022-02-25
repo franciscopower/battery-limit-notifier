@@ -37,8 +37,18 @@ def check_battery(bat_min_limit, bat_max_limit):
 
 
 def main():
+    # determine if the application is a frozen `.exe` (e.g. pyinstaller --onefile) 
+    if getattr(sys, 'frozen', False):
+        application_path = os.path.dirname(sys.executable)
+    # or a script file (e.g. `.py` / `.pyw`)
+    elif __file__:
+        application_path = os.path.dirname(__file__)
+
+    config_name = 'config.yaml'
+    config_path = os.path.join(application_path, config_name)
+
     #get settings
-    with open('C:\\Program Files\\BatteryLimitNotifier\\config.yaml') as config_file: #TODO substitute in installation method
+    with open(config_path) as config_file: 
     # with open('C:\\dev\\PYTHON\\battery-limit-notifier\\config.yaml') as config_file: #?For testing
         config = yaml.load(config_file, Loader=yaml.FullLoader)
         
